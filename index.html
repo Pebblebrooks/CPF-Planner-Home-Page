@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CPF Planner Pro | Master Your Retirement Strategy</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="CPF Planner Pro | Master Your Retirement Strategy">
+    <meta name="description" content="A powerful, privacy-first tool to help Singaporeans project CPF balances, visualize compounding interest, and plan retirement scenarios.">
+    
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cpfplannerhome.netlify.app/">
+    <meta property="og:title" content="CPF Planner Pro | Master Your Retirement Strategy">
+    <meta property="og:description" content="A powerful, privacy-first tool to help Singaporeans project CPF balances, visualize compounding interest, and plan retirement scenarios.">
+    <meta property="og:image" content="https://cpfplannerhome.netlify.app/summary-dashboard.jpg">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -71,7 +86,6 @@
             background-color: var(--bg-color);
             transition: background-color 0.3s ease, color 0.3s ease;
             -webkit-font-smoothing: antialiased;
-            /* overflow-x removed here to prevent mobile Safari bounce-back bug */
         }
 
         /* Prevent horizontal scroll globally in a safer way */
@@ -318,30 +332,24 @@
             align-items: center;
         }
 
-        .floating-mockup {
-            width: 100%;
-            max-width: 500px;
-            background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            animation: float 6s ease-in-out infinite;
-        }
-
+        /* Floating animation for the hero image */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
 
-        .mockup-header { display: flex; gap: 8px; margin-bottom: 1rem; }
-        .dot { width: 12px; height: 12px; border-radius: 50%; background: #e2e8f0; }
-        .dot:nth-child(1) { background: #ff5f56; }
-        .dot:nth-child(2) { background: #ffbd2e; }
-        .dot:nth-child(3) { background: #27c93f; }
-        
-        .mockup-body { height: 250px; background: var(--bg-color); border-radius: 8px; position: relative; overflow: hidden; }
+        .hero-screenshot {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            animation: float 6s ease-in-out infinite;
+            object-fit: cover;
+            object-position: top;
+            max-height: 450px; 
+        }
 
         /* --- Video Section --- */
         .video-container {
@@ -359,33 +367,6 @@
             justify-content: center;
             border: 1px solid var(--border-color);
         }
-
-        .video-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom right, rgba(4, 106, 56, 0.2), rgba(0,0,0,0.6));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: opacity 0.3s;
-        }
-
-        .video-container:hover .video-overlay { background: rgba(0,0,0,0.4); }
-
-        .play-btn {
-            width: 80px; height: 80px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1rem;
-            box-shadow: 0 0 20px rgba(4, 106, 56, 0.5);
-            transition: transform 0.3s;
-        }
-
-        .video-container:hover .play-btn { transform: scale(1.1); }
-        .play-btn svg { width: 32px; height: 32px; fill: white; margin-left: 5px; }
 
         /* --- Grid & Cards --- */
         .grid {
@@ -438,6 +419,53 @@
         .feature-row:nth-child(even) { flex-direction: row-reverse; }
         .feature-text { flex: 1; }
         .feature-visual { flex: 1; }
+        
+        .feature-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            object-fit: cover;
+            object-position: top;
+            max-height: 350px;
+        }
+
+        /* --- FAQ Accordion --- */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .faq-item summary {
+            padding: 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--text-main);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            line-height: 1.7;
+        }
 
         /* --- CTA Section --- */
         .cta-section {
@@ -525,6 +553,7 @@
                 <a href="#features" class="smooth-scroll">Features</a>
                 <a href="#policies" class="smooth-scroll">Policies</a>
                 <a href="#benefits" class="smooth-scroll">Benefits</a>
+                <a href="#faq" class="smooth-scroll">FAQ</a>
             </nav>
 
             <div class="controls">
@@ -562,38 +591,21 @@
             <h1>Navigate your <span class="text-primary">CPF Journey</span> with <span class="text-accent">certainty</span>.</h1>
             <p>A powerful, minimalist tool designed to help you understand complex Central Provident Fund policies, visualize compounding interest, and map out your ultimate retirement strategy.</p>
             <div class="hero-actions">
-                <a href="https://cpfplannerv3.netlify.app/" target="_blank" class="btn btn-primary">Start Planning Today</a>
-                <a href="#video" class="btn btn-outline smooth-scroll">Watch Demo</a>
-            </div>
+            <a href="https://cpfplannerv3.netlify.app/" target="_blank" class="btn btn-primary">Start Planning Today</a>
+            <a href="#video" class="btn btn-outline smooth-scroll">Watch Demo</a>
         </div>
-        <div class="hero-image animate-on-scroll">
-            <div class="floating-mockup">
-                <div class="mockup-header">
-                    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                </div>
-                <div class="mockup-body" style="padding: 1.5rem; display: flex; flex-direction: column;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div>
-                            <div style="font-size: 0.875rem; color: var(--text-muted); font-weight: 500;">Projected Balance</div>
-                            <div style="font-size: 1.75rem; font-weight: 800; color: var(--text-main); margin-top: 0.25rem;">$124,500</div>
-                        </div>
-                        <div style="background: var(--primary-light); color: var(--primary); padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.875rem; font-weight: 700;">
-                            +3.5% OA
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; align-items: flex-end; gap: 12px; flex-grow: 1; margin-top: 2rem; height: 110px;">
-                        <div style="flex: 1; background: var(--border-color); height: 40%; border-radius: 4px 4px 0 0; opacity: 0.5;"></div>
-                        <div style="flex: 1; background: var(--border-color); height: 55%; border-radius: 4px 4px 0 0; opacity: 0.7;"></div>
-                        <div style="flex: 1; background: var(--border-color); height: 75%; border-radius: 4px 4px 0 0; opacity: 0.9;"></div>
-                        <div style="flex: 1; background: var(--primary); height: 100%; border-radius: 4px 4px 0 0; box-shadow: 0 -4px 12px rgba(4, 106, 56, 0.2);"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+    <div class="hero-image animate-on-scroll">
+        <!-- Dashboard Summary Screenshot -->
+        <!-- Fallback onerror image is provided just for the Canvas preview -->
+        <img src="summary-dashboard.jpg" 
+             alt="CPF Planner Pro Summary Dashboard" 
+             class="hero-screenshot"
+             onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'">
+    </div>
+</section>
 
-    <!-- Video Section -->
+<!-- Video Section -->
     <section id="video" class="section section-alt">
         <div class="container text-center animate-on-scroll">
             <span class="badge mb-4">See it in action</span>
@@ -692,34 +704,11 @@
                     </ul>
                 </div>
                 <div class="feature-visual">
-                    <div style="background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
-                         <!-- Enhanced SVG Graph with Two Lines -->
-                         <svg width="100%" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background Grid Lines -->
-                            <line x1="0" y1="160" x2="400" y2="160" stroke="var(--border-color)" stroke-dasharray="4 4"/>
-                            <line x1="0" y1="100" x2="400" y2="100" stroke="var(--border-color)" stroke-dasharray="4 4"/>
-                            <line x1="0" y1="40" x2="400" y2="40" stroke="var(--border-color)" stroke-dasharray="4 4"/>
-                            
-                            <!-- Secondary Line (Accent Color) -->
-                            <path d="M0 180 L80 165 L160 170 L240 130 L320 145 L400 90" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6"/>
-                            <circle cx="80" cy="165" r="4" fill="var(--bg-color)" stroke="var(--accent)" stroke-width="2"/>
-                            <circle cx="240" cy="130" r="4" fill="var(--bg-color)" stroke="var(--accent)" stroke-width="2"/>
-                            <circle cx="400" cy="90" r="4" fill="var(--bg-color)" stroke="var(--accent)" stroke-width="2"/>
-
-                            <!-- Primary Line (Green Color) -->
-                            <path d="M0 180 L80 150 L160 160 L240 100 L320 120 L400 40" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="80" cy="150" r="6" fill="var(--bg-color)" stroke="var(--primary)" stroke-width="3"/>
-                            <circle cx="240" cy="100" r="6" fill="var(--bg-color)" stroke="var(--primary)" stroke-width="3"/>
-                            <circle cx="400" cy="40" r="6" fill="var(--bg-color)" stroke="var(--primary)" stroke-width="3"/>
-                            
-                            <!-- Gradient Fill under primary line -->
-                            <path d="M0 180 L80 150 L160 160 L240 100 L320 120 L400 40 L400 200 L0 200 Z" fill="var(--primary)" fill-opacity="0.1"/>
-                         </svg>
-                         <div style="display: flex; gap: 1rem; margin-top: 1rem; justify-content: center; font-size: 0.8rem;">
-                            <div style="display: flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 3px; background: var(--primary); display: inline-block;"></span> Optimized</div>
-                            <div style="display: flex; align-items: center; gap: 4px;"><span style="width: 12px; height: 3px; border-bottom: 2px dashed var(--accent); display: inline-block;"></span> Standard</div>
-                         </div>
-                    </div>
+                    <!-- Growth Dashboard Screenshot -->
+                    <img src="growth-chart.jpg" 
+                         alt="Interactive Growth Charts" 
+                         class="feature-img"
+                         onerror="this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80'">
                 </div>
             </div>
 
@@ -730,20 +719,11 @@
                     <p>Thinking of buying an HDB or making voluntary transfers from OA to SA? Run simulations to see exactly how these decisions impact your long-term balance and monthly payouts at retirement.</p>
                 </div>
                 <div class="feature-visual">
-                    <div style="background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
-                            <span style="color: var(--text-muted);">Transfer Amount</span>
-                            <strong style="color: var(--text-main);">$40,000</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                            <span style="color: var(--text-muted);">New OA Balance</span>
-                            <strong style="color: var(--text-main);">$60,000</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: var(--text-muted);">New SA Balance</span>
-                            <strong style="color: var(--primary);">$140,000</strong>
-                        </div>
-                    </div>
+                    <!-- Compare Scenarios Screenshot -->
+                    <img src="compare-scenarios.jpg" 
+                         alt="Compare Financial Scenarios" 
+                         class="feature-img"
+                         onerror="this.src='https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80'">
                 </div>
             </div>
         </div>
@@ -765,6 +745,44 @@
                 <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-main);">Clarity & Peace of Mind</h3>
                 <p>Remove the guesswork from retirement. See clear, actionable numbers that allow you to make decisions with absolute confidence.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section container animate-on-scroll">
+        <div class="text-center mb-8">
+            <span class="badge mb-4">Got Questions?</span>
+            <h2 style="font-size: 2.5rem;">Frequently Asked <span class="text-accent">Questions</span></h2>
+        </div>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <details class="faq-item">
+                <summary>Is my personal financial data saved anywhere?</summary>
+                <div class="faq-content">
+                    Absolutely not. CPF Planner Pro is a client-side application. This means all of your salary inputs, account balances, and age data are processed entirely within your own web browser. We do not have a database, and zero financial data is ever transmitted to our servers.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Are the CPF interest rates and limits up to date?</summary>
+                <div class="faq-content">
+                    Yes. The mathematical models driving the projections are aligned with the official 2026 CPF Board rates, including the respective interest rate tiers for OA, SA, MA, and RA accounts, as well as the latest Basic Healthcare Sum (BHS) and Full Retirement Sum (FRS) parameters.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Is this tool affiliated with the CPF Board?</summary>
+                <div class="faq-content">
+                    No. CPF Planner Pro is an independent educational tool created to help Singaporeans better visualize their retirement compounding. It is not supported, approved, or sanctioned by the Central Provident Fund Board or any government agency.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Is this free to use?</summary>
+                <div class="faq-content">
+                    Yes, this prototype simulation tool is 100% free to use for educational and informational purposes.
+                </div>
+            </details>
         </div>
     </section>
 
@@ -823,6 +841,7 @@
                         <li><a href="#features" class="smooth-scroll">Features</a></li>
                         <li><a href="#policies" class="smooth-scroll">Policies</a></li>
                         <li><a href="#benefits" class="smooth-scroll">Benefits</a></li>
+                        <li><a href="#faq" class="smooth-scroll">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
