@@ -558,25 +558,29 @@
         .cta-glass-card {
             position: relative;
             z-index: 10;
-            background: rgba(15, 23, 42, 0.75); /* Dark translucent background */
+            background: rgba(255, 255, 255, 0.75); /* Light translucent background */
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-bottom: 4px solid rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-bottom: 4px solid var(--border-color);
             border-radius: 24px;
             padding: 4rem;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255,255,255,0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255,255,255,0.6);
             max-width: 800px;
             width: 100%;
         }
         [data-theme="dark"] .cta-glass-card {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.85); /* Dark translucent */
             border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 4px solid rgba(0, 0, 0, 0.4);
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
-        .cta-glass-card h2 { color: #f8fafc !important; font-size: 2.5rem; margin-bottom: 1rem; }
-        .cta-glass-card p { color: #cbd5e1 !important; font-size: 1.25rem; margin-bottom: 2rem; }
+        .cta-glass-card h2 { color: var(--text-main) !important; font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-glass-card p { color: var(--text-muted) !important; font-size: 1.25rem; margin-bottom: 2rem; }
+        [data-theme="dark"] .cta-glass-card h2 { color: #f8fafc !important; }
+        [data-theme="dark"] .cta-glass-card p { color: #cbd5e1 !important; }
+        
         .cta-glass-card .btn-primary {
             background-color: #10b981 !important;
             color: #ffffff !important;
@@ -939,11 +943,9 @@
                 <p style="max-width: 700px; margin: 0 auto 4rem;">Capitalize on the latest CPF policy shifts, maximize your yields, and secure your retirement. Here are the core strategies driving the planner's engine.</p>
             </div>
             
-            <!-- REMOVED animate-on-scroll from the main grid wrapper -->
             <div class="playbook-grid">
                 
                 <!-- Playbook Card 1: ERS Cap -->
-                <!-- ADDED animate-on-scroll to individual cards -->
                 <div class="article-card playbook-card animate-on-scroll">
                     <div class="article-image">
                         <div class="float-1" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 2rem;">
@@ -968,7 +970,6 @@
                 </div>
 
                 <!-- Playbook Card 2: Top-Up Arbitrage -->
-                <!-- ADDED animate-on-scroll -->
                 <div class="article-card playbook-card animate-on-scroll">
                     <div class="article-image" style="perspective: 1000px;">
                         <div class="float-2" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 1.5rem;">
@@ -998,7 +999,6 @@
                 </div>
 
                 <!-- Playbook Card 3: Deferment Multiplier (Compelling Dial Graphic) -->
-                <!-- ADDED animate-on-scroll -->
                 <div class="article-card playbook-card animate-on-scroll">
                     <div class="article-image" style="perspective: 1000px;">
                         <div class="float-3" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 2rem;">
@@ -1026,7 +1026,6 @@
                 </div>
 
                 <!-- Playbook Card 4: Cost of Inaction (Linked Orbs Graphic) -->
-                <!-- ADDED animate-on-scroll -->
                 <div class="article-card playbook-card animate-on-scroll">
                     <div class="article-image">
                          <div class="float-1" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 2rem; position: relative;">
@@ -1036,15 +1035,15 @@
                                 <div style="position: absolute; top: 50%; left: 25%; right: 25%; height: 4px; background: #475569; z-index: 1; transform: translateY(-50%); border-radius: 2px;"></div>
 
                                 <!-- Left Orb (OA) - 3D Translucent -->
-                                <div style="width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #e2e8f0, #94a3b8); box-shadow: inset -4px -4px 10px rgba(0,0,0,0.1), inset 4px 4px 10px rgba(255,255,255,0.8), 0 10px 20px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; z-index: 2; border: 1px solid #cbd5e1;">
-                                    <span style="font-size: 0.9rem; font-weight: 800; color: #0f172a;">2.5%</span>
+                                <div style="width: 75px; height: 75px; border-radius: 50%; background: rgba(203, 213, 225, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: inset -4px -4px 10px rgba(0,0,0,0.1), inset 4px 4px 10px rgba(255,255,255,0.8), 0 10px 20px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; z-index: 2; border: 1px solid rgba(255, 255, 255, 0.4);">
+                                    <span style="font-size: 0.95rem; font-weight: 800; color: #0f172a;">2.5%</span>
                                 </div>
 
                                 <!-- Right Orb (SA) - 3D Translucent Glow -->
-                                <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #046A38); box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3), inset 5px 5px 15px rgba(255,255,255,0.4), 0 15px 30px rgba(4, 106, 56, 0.4); display: flex; align-items: center; justify-content: center; z-index: 3; position: relative; border: 1px solid #059669;">
+                                <div style="width: 110px; height: 110px; border-radius: 50%; background: rgba(16, 185, 129, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: inset -5px -5px 15px rgba(0,0,0,0.2), inset 5px 5px 15px rgba(255,255,255,0.4), 0 15px 30px rgba(4, 106, 56, 0.3); display: flex; align-items: center; justify-content: center; z-index: 3; position: relative; border: 1px solid rgba(16, 185, 129, 0.8);">
                                     <!-- Pop-out Badge -->
-                                    <div style="position: absolute; top: -12px; right: -12px; background: linear-gradient(135deg, #fbbf24, #f59e0b); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4); border: 1px solid #fef3c7;">+$16,500</div>
-                                    <span style="font-size: 1.4rem; font-weight: 900; color: white;">4.0%</span>
+                                    <div style="position: absolute; top: -15px; right: -15px; background: linear-gradient(135deg, #fbbf24, #f59e0b); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4), inset 0 2px 4px rgba(255,255,255,0.5); border: 2px solid #fef3c7;">+$16,500</div>
+                                    <span style="font-size: 1.5rem; font-weight: 900; color: white;">4.0%</span>
                                 </div>
                             </div>
                             
@@ -1063,7 +1062,6 @@
                 </div>
 
                 <!-- Playbook Card 5: Triple-Lock (Centered with padding) -->
-                <!-- ADDED animate-on-scroll -->
                 <div class="article-card playbook-card animate-on-scroll">
                     <div class="article-image" style="perspective: 800px;">
                          <div class="float-2" style="position: relative; width: 140px; height: 140px; transform-style: preserve-3d; transform: rotateX(25deg) rotateY(-25deg); margin-top: 1.5rem;">
@@ -1094,7 +1092,6 @@
                 </div>
 
                 <!-- Playbook Card 6: VHR (Padding Added) -->
-                <!-- ADDED animate-on-scroll -->
                 <div class="article-card playbook-card animate-on-scroll">
                     <div class="article-image">
                          <div class="float-3" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 2rem;">
@@ -1121,10 +1118,9 @@
                 </div>
 
                 <!-- Playbook Card 7: Trusted Contact (Floating Pills & SVG Icons) -->
-                <!-- ADDED animate-on-scroll -->
                 <div class="article-card playbook-card animate-on-scroll">
-                    <div class="article-image" style="background: #0f172a;">
-                         <div class="float-1" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; gap: 1.5rem; padding: 2rem;">
+                    <div class="article-image">
+                         <div class="float-1" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; gap: 1.5rem; padding: 2.5rem 1.5rem;">
                             
                             <!-- 3D Interlocking Rings Graphic -->
                             <div style="position: relative; display: flex; align-items: center; justify-content: center; width: 130px; height: 75px;">
@@ -1136,21 +1132,21 @@
                                 <div style="position: absolute; left: 43px; top: 8px; width: 16px; height: 32px; border-top: 12px solid #10b981; border-right: 12px solid #10b981; border-radius: 0 35px 0 0; z-index: 3;"></div>
                             </div>
                             
-                            <!-- Pure Graphic Floating Pills (No bullet dots, transparent background) -->
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%; max-width: 220px;">
+                            <!-- Pure Graphic Floating Pills (Transparent background) -->
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 220px;">
                                 <!-- Anomaly Detected -->
                                 <div style="background: transparent; padding: 0.5rem 1.25rem; display: flex; align-items: center; gap: 12px;">
                                     <div style="display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 4px rgba(245,158,11,0.6));">
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                                     </div>
-                                    <span style="font-size: 0.85rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.02em;">Anomaly Detected</span>
+                                    <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.02em;">Anomaly Detected</span>
                                 </div>
                                 <!-- Guardian Notified -->
                                 <div style="background: transparent; padding: 0.5rem 1.25rem; display: flex; align-items: center; gap: 12px;">
                                     <div style="display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 4px rgba(16,185,129,0.6));">
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                     </div>
-                                    <span style="font-size: 0.85rem; font-weight: 700; color: #f8fafc; letter-spacing: 0.02em;">Guardian Notified</span>
+                                    <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.02em;">Guardian Notified</span>
                                 </div>
                             </div>
                         </div>
@@ -1165,38 +1161,38 @@
                     </div>
                 </div>
 
-                <!-- Playbook Card 8: Safety Switch (Dark BG & Floating Text/Icons) -->
-                <!-- ADDED animate-on-scroll -->
+                <!-- Playbook Card 8: Safety Switch (Floating Text/Icons) -->
                 <div class="article-card playbook-card animate-on-scroll">
-                    <div class="article-image" style="background: #0f172a;">
-                         <div class="float-3" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 2rem; gap: 1rem;">
+                    <div class="article-image">
+                         <div class="float-3" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 2.5rem 1.5rem; gap: 1rem;">
                             
-                            <!-- Standalone Switch Base Plate -->
-                            <div style="background: #1e293b; width: 80px; height: 80px; border-radius: 16px; box-shadow: inset 0 2px 6px rgba(255,255,255,0.05), 0 10px 20px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; position: relative; border-bottom: 4px solid #020617;">
-                                <!-- Red Switch Button -->
-                                <div style="background: linear-gradient(135deg, #ef4444, #991b1b); width: 50px; height: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4), inset 0 2px 4px rgba(255,255,255,0.3); border-bottom: 4px solid #7f1d1d; display: flex; align-items: center; justify-content: center; cursor: pointer; transform: translateY(-2px);">
-                                    <span style="color: white; font-weight: 900; font-size: 0.85rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">OFF</span>
+                            <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                                <!-- Switch Base Plate (Adapts to light/dark) -->
+                                <div style="background: var(--bg-alt); width: 70px; height: 70px; border-radius: 16px; box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; position: relative; border: 1px solid var(--border-color); border-bottom: 4px solid var(--border-color);">
+                                    <!-- Red Switch Button -->
+                                    <div style="background: linear-gradient(135deg, #ef4444, #991b1b); width: 45px; height: 35px; border-radius: 8px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4), inset 0 2px 4px rgba(255,255,255,0.3); border-bottom: 4px solid #7f1d1d; display: flex; align-items: center; justify-content: center; transform: translateY(-3px);">
+                                        <span style="color: white; font-weight: 900; font-size: 0.8rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">OFF</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pure Graphic Status Indicators (Floating text) -->
+                                <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%; max-width: 220px;">
+                                    <!-- Lockdown Active -->
+                                    <div style="background: transparent; padding: 0.25rem 1rem; display: flex; align-items: center; justify-content: flex-start; gap: 10px;">
+                                        <div style="display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 4px rgba(239,68,68,0.6));">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                        </div>
+                                        <span style="font-weight: 800; color: #ef4444; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Lockdown Active</span>
+                                    </div>
+                                    <!-- Online Access Disabled -->
+                                    <div style="background: transparent; padding: 0.25rem 1rem; display: flex; align-items: center; justify-content: flex-start; gap: 8px;">
+                                        <div style="display: flex; align-items: center; justify-content: center;">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><line x1="4" y1="4" x2="20" y2="20"></line></svg>
+                                        </div>
+                                        <span style="font-weight: 600; color: var(--text-muted); font-size: 0.85rem;">Online Access Disabled</span>
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <!-- Pure Graphic Status Indicators (Floating on container background) -->
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%; max-width: 220px;">
-                                <!-- Lockdown Active Pill -->
-                                <div style="background: transparent; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                                    <div style="display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 4px rgba(239,68,68,0.6));">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                    </div>
-                                    <span style="font-weight: 800; color: #ef4444; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Lockdown Active</span>
-                                </div>
-                                <!-- Online Access Disabled -->
-                                <div style="background: transparent; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                    <div style="display: flex; align-items: center; justify-content: center;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><line x1="4" y1="4" x2="20" y2="20"></line></svg>
-                                    </div>
-                                    <span style="font-weight: 600; color: #cbd5e1; font-size: 0.85rem;">Online Access Disabled</span>
-                                </div>
-                            </div>
-                            
                         </div>
                     </div>
                     <div class="article-content">
@@ -1209,23 +1205,22 @@
                     </div>
                 </div>
 
-                <!-- Playbook Card 9: CPF Withdrawal Lock (Brand New & Centered) -->
-                <!-- ADDED animate-on-scroll -->
+                <!-- Playbook Card 9: CPF Withdrawal Lock -->
                 <div class="article-card playbook-card animate-on-scroll">
-                    <div class="article-image" style="background: #0f172a;">
+                    <div class="article-image">
                          <!-- High top padding to prevent the lock from clipping the top border -->
                          <div class="float-4" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding: 3.5rem 1.5rem 1rem 1.5rem;">
                             
                             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; gap: 0.5rem;">
-                                <!-- 3D Silver Padlock (Scaled down and padded to prevent top clipping) -->
-                                <div style="position: relative; width: 70px; height: 85px; display: flex; flex-direction: column; align-items: center; margin-bottom: 0.5rem;">
+                                <!-- 3D Silver Padlock (Pushed down and larger text) -->
+                                <div style="position: relative; width: 70px; height: 85px; display: flex; flex-direction: column; align-items: center; margin-top: 1rem; margin-bottom: 0.5rem;">
                                     <!-- Shackle -->
                                     <div style="width: 32px; height: 26px; border: 8px solid #cbd5e1; border-bottom: none; border-radius: 30px 30px 0 0; box-shadow: inset 0 4px 6px rgba(255,255,255,0.8), 0 -4px 6px rgba(0,0,0,0.2);"></div>
                                     <!-- Body -->
-                                    <div style="width: 65px; height: 48px; background: linear-gradient(135deg, #e2e8f0, #94a3b8); border-radius: 12px; box-shadow: inset 2px 2px 5px rgba(255,255,255,0.8), inset -2px -2px 5px rgba(0,0,0,0.3), 0 15px 25px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 2;">
-                                        <!-- Engraved CPF (Bold Green) -->
-                                        <div style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid rgba(0,0,0,0.1); box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2), inset -2px -2px 4px rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center;">
-                                            <span style="font-weight: 900; font-size: 0.85rem; color: #10b981; letter-spacing: 0.05em;">CPF</span>
+                                    <div style="width: 65px; height: 48px; background: linear-gradient(135deg, #f8fafc, #cbd5e1); border-radius: 12px; box-shadow: inset 2px 2px 5px rgba(255,255,255,0.8), inset -2px -2px 5px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.3); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; z-index: 2;">
+                                        <!-- Engraved CPF (Bold Green, Larger) -->
+                                        <div style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid rgba(0,0,0,0.05); box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1), inset -2px -2px 4px rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; background: #e2e8f0;">
+                                            <span style="font-weight: 900; font-size: 1rem; color: #10b981; letter-spacing: 0.05em; text-shadow: 1px 1px 0px rgba(255,255,255,0.8);">CPF</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1233,20 +1228,20 @@
                                 <!-- Pure Graphic Status Indicators (Floating on background) -->
                                 <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%; max-width: 220px;">
                                     <!-- Withdrawals Locked -->
-                                    <div style="background: transparent; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                                    <div style="background: transparent; padding: 0.25rem 1rem; display: flex; align-items: center; justify-content: flex-start; gap: 10px;">
                                         <div style="display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 4px rgba(239,68,68,0.6));">
                                             <!-- Slashed Dollar Sign SVG -->
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path><line x1="4" y1="4" x2="20" y2="20"></line></svg>
                                         </div>
-                                        <span style="font-size: 0.85rem; font-weight: 800; color: #f8fafc; letter-spacing: 0.02em;">Withdrawals Locked</span>
+                                        <span style="font-size: 0.85rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.02em;">Withdrawals Locked</span>
                                     </div>
                                     <!-- Online Access Active -->
-                                    <div style="background: transparent; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                                    <div style="background: transparent; padding: 0.25rem 1rem; display: flex; align-items: center; justify-content: flex-start; gap: 10px;">
                                         <div style="display: flex; align-items: center; justify-content: center; filter: drop-shadow(0 0 4px rgba(16,185,129,0.6));">
                                             <!-- Clean Globe SVG -->
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                                         </div>
-                                        <span style="font-size: 0.85rem; font-weight: 800; color: #f8fafc; letter-spacing: 0.02em;">Online Access Active</span>
+                                        <span style="font-size: 0.85rem; font-weight: 800; color: var(--text-main); letter-spacing: 0.02em;">Online Access Active</span>
                                     </div>
                                 </div>
                             </div>
